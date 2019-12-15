@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="D:\CODING\node\term_project\bootstrap\css\bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" -->
+
+<!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <title> 공지사항 </title>
+</head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+     <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+         <span class="sr-only"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="#">MENU</a>
+     </div>
+
+     <!-- Collect the nav links, forms, and other content for toggling -->
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="/main">홈<span class="sr-only">(current)</span></a></li>
+         <li><a href="/list">공지사항</a></li>
+         <li><a href="/list_user">견적상담</a></li>
+         <li><a href="/map">찾아오는길</a></li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li><a href="/logout">로그아웃</a></li>
+       </ul>
+       <!-- <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+             <li><a href="/login">로그인</a></li>
+             <li><a href="/register">회원가입</a></li>
+           </ul>
+         </li>
+       </ul> -->
+     </div><!-- /.navbar-collapse -->
+   </div><!-- /.container-fluid -->
+ </nav>
+    <div class="container">
+    <h1>공지사항</h1>
+    <table class="table table-dark table-hover">
+      <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>조회수</th>
+        <th>수정일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(function (item, index){%>
+      <tr>
+        <td><%=item.id%></td>
+        <td><a href="/list/<%=item.title%>"><%=item.title%></a></td>
+        <td><%=item.name%></td>
+        <td><%=item.hit%></td>
+        <td><%=item.modidate%></td>
+      </tr>
+      <% }); %>
+    </tbody>
+    </table>
+      <a href="/insert_notify" class="btn btn-default pull-left"> 글쓰기 </a>
+    <br>
+    <br>
+    <footer style="background-color: #000000; color: #ffffff">
+      <div class="container">
+        <br>
+        <div class="row">
+          <div class="col-sm-4"><h4>대표자 소개</h4><p>컴퓨터공학과 15학번 남영훈입니다.<br> 이 페이지는 고급웹프로그래밍 텀 프로젝트 입니다.</p></div>
+          <div class="col-sm-2"><h4 style="text-align: center;">Site Menu</h4>
+            <div class="list-group">
+              <a href="/main" class="list-group-item">홈</a>
+              <a href="/list" class="list-group-item">공지사항</a>
+              <a href="/list_user" class="list-group-item">견적의뢰</a>
+              <a href="/map" class="list-group-item">찾아오는길</a>
+            </div>
+          </div>
+            <div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
+              <div class="list-group">
+                <a href="https://www.instagram.com/n.y.hoon" class="list-group-item">Instagram</a>
+                <a href="https://www.facebook.com/" class="list-group-item">Facebook</a>
+                <a href="https://www.youtube.com/channel/UCVDM7E7qlHq8zaiqcphUZGw" class="list-group-item">Youtube</a>
+              </div>
+            </div>
+            <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy;2019</h5><h5>남영훈(NAM YOUNG HOON)</h5></div>
+            <div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>by 남영훈</h4></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>
